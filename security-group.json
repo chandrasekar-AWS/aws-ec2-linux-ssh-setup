@@ -1,0 +1,30 @@
+{
+  "Description": "Security Group config for AWS EC2 Linux SSH Setup project",
+  "SecurityGroupName": "ec2-ssh-sg",
+  "Rules": {
+    "Inbound": [
+      {
+        "Type": "SSH",
+        "Protocol": "tcp",
+        "Port": 22,
+        "Source": "YOUR_IP/32",
+        "Description": "Allow SSH from your trusted IP only — replace YOUR_IP with your actual IP"
+      }
+    ],
+    "Outbound": [
+      {
+        "Type": "All traffic",
+        "Protocol": "all",
+        "Port": "all",
+        "Destination": "0.0.0.0/0",
+        "Description": "Allow all outbound traffic (default)"
+      }
+    ]
+  },
+  "Notes": [
+    "Never open SSH (port 22) to 0.0.0.0/0 — always restrict to your IP",
+    "Get your current IP: curl https://checkip.amazonaws.com",
+    "Use RSA key pairs for passwordless, secure authentication",
+    "Rotate key pairs periodically for better security"
+  ]
+}

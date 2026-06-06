@@ -1,0 +1,23 @@
+# SSH Keys — never commit private keys!
+*.pem
+*.ppk
+id_rsa
+id_rsa.pub
+
+# AWS credentials
+.aws/
+credentials
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
